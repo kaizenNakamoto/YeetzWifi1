@@ -82,4 +82,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="78dp"
         android:background="@drawable/usual" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="14dp"
+        android:text="Made by kx4" />
 </RelativeLayout>
