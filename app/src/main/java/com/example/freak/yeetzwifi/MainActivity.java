@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.os.Handler;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 
 import java.io.IOException;
@@ -39,18 +37,19 @@ public class MainActivity extends AppCompatActivity {
     private EditText ipAddress;
     final Context context = this;
     String serverAdress2 = "192.168.43.94:80";
-
+    Boolean profileFlag=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ipAddress = (EditText) findViewById(R.id.texty);
-        Button up = findViewById(R.id.button);
-        Button down = findViewById(R.id.button2);
+        final Button up = findViewById(R.id.button);
+        final Button down = findViewById(R.id.button2);
         Button b3 = findViewById(R.id.set);
-        Button left = findViewById(R.id.button4);
-        Button right= findViewById(R.id.button5);
+        final Button left = findViewById(R.id.button4);
+        final Button right= findViewById(R.id.button5);
         Button on = findViewById(R.id.button6);
+        final Button profile=findViewById(R.id.profile);
         b3.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -63,23 +62,45 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(profileFlag==true){
+                sendat("p2");
+                profileFlag=false;
+                profile.setBackgroundResource(R.drawable.reverse);}
+                else {
+                sendat("p1");
+                profileFlag=true;
+                profile.setBackgroundResource(R.drawable.usual);
+                }
+                }
+        });
         up.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction()==MotionEvent.ACTION_DOWN)
+                if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                    up.setBackgroundResource(R.drawable.uparrowpressed);
                     sendat("forward");
-                else if(motionEvent.getAction()==MotionEvent.ACTION_UP)
+                   }
+                else if(motionEvent.getAction()==MotionEvent.ACTION_UP){
+                    up.setBackgroundResource(R.drawable.uparrow);
                     sendat("stop");
+                   }
                 return false;
             }
         });
         down.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction()==MotionEvent.ACTION_DOWN)
+                if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
+                    down.setBackgroundResource(R.drawable.downarrowpressed);
                     sendat("back");
+                }
                 else if(motionEvent.getAction()==MotionEvent.ACTION_UP)
+                { down.setBackgroundResource(R.drawable.downarrow);
                     sendat("stop");
+                 }
                 return false;
             }
         });
@@ -87,9 +108,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction()==MotionEvent.ACTION_DOWN)
-                    sendat("left");
+                {   left.setBackgroundResource(R.drawable.leftarrowpressed);
+                    sendat("left");}
                 else if(motionEvent.getAction()==MotionEvent.ACTION_UP)
-                    sendat("stop");
+                {   left.setBackgroundResource(R.drawable.leftarrow);
+                    sendat("stop");}
                 return false;
             }
         });
@@ -97,9 +120,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction()==MotionEvent.ACTION_DOWN)
-                    sendat("right");
+                { right.setBackgroundResource(R.drawable.rightarrowpressed);
+                    sendat("right");}
                 else if(motionEvent.getAction()==MotionEvent.ACTION_UP)
-                    sendat("stop");
+                {  right.setBackgroundResource(R.drawable.rightarrow);
+                    sendat("stop");}
                 return false;
             }
         });
