@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Handler;
 import android.view.View.OnTouchListener;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     final Context context = this;
     String serverAdress2 = "192.168.43.94:80";
     Boolean profileFlag=true;
+    TextView t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         final Button left = findViewById(R.id.button4);
         final Button right= findViewById(R.id.button5);
         Button on = findViewById(R.id.button6);
+        t1=findViewById(R.id.textView);
         final Button profile=findViewById(R.id.profile);
         b3.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
