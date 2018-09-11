@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Handler;
@@ -45,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ipAddress = (EditText) findViewById(R.id.texty);
-        final Button up = findViewById(R.id.button);
-        final Button down = findViewById(R.id.button2);
-        Button b3 = findViewById(R.id.set);
-        final Button left = findViewById(R.id.button4);
-        final Button right= findViewById(R.id.button5);
-        Button on = findViewById(R.id.button6);
+        final ImageView up = findViewById(R.id.button);
+        final ImageView down = findViewById(R.id.button2);
+        final ImageView b3 = findViewById(R.id.set);
+        final ImageView left = findViewById(R.id.button4);
+        final ImageView right= findViewById(R.id.button5);
+        final ImageView on = findViewById(R.id.button6);
         t1=findViewById(R.id.textView);
-        final Button profile=findViewById(R.id.profile);
+        final ImageView profile=findViewById(R.id.profile);
         b3.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -83,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
-                    up.setBackgroundResource(R.drawable.uparrowpressed);
+                    //up.setImageResource(R.drawable.uparrowpressed);
                     sendat("forward");
                    }
                 else if(motionEvent.getAction()==MotionEvent.ACTION_UP){
-                    up.setBackgroundResource(R.drawable.uparrow);
+                    //up.setImageResource(R.drawable.uparrow);
                     sendat("stop");
                    }
                 return false;
@@ -97,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
-                    down.setBackgroundResource(R.drawable.downarrowpressed);
+                    //down.setImageResource(R.drawable.downarrowpressed);
                     sendat("back");
                 }
                 else if(motionEvent.getAction()==MotionEvent.ACTION_UP)
-                { down.setBackgroundResource(R.drawable.downarrow);
+                { //down.setImageResource(R.drawable.downarrow);
                     sendat("stop");
                  }
                 return false;
@@ -111,10 +112,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction()==MotionEvent.ACTION_DOWN)
-                {   left.setBackgroundResource(R.drawable.leftarrowpressed);
+                {   //left.setImageResource(R.drawable.leftarrowpressed);
                     sendat("left");}
                 else if(motionEvent.getAction()==MotionEvent.ACTION_UP)
-                {   left.setBackgroundResource(R.drawable.leftarrow);
+                {   //left.setImageResource(R.drawable.leftarrow);
                     sendat("stop");}
                 return false;
             }
@@ -123,10 +124,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction()==MotionEvent.ACTION_DOWN)
-                { right.setBackgroundResource(R.drawable.rightarrowpressed);
+                { //right.setImageResource(R.drawable.rightarrowpressed);
                     sendat("right");}
                 else if(motionEvent.getAction()==MotionEvent.ACTION_UP)
-                {  right.setBackgroundResource(R.drawable.rightarrow);
+                { //right.setImageResource(R.drawable.rightarrow);
                     sendat("stop");}
                 return false;
             }

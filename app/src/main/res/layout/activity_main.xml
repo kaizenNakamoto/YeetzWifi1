@@ -7,7 +7,7 @@
     tools:context=".MainActivity"
     android:background="@drawable/background">
 
-    <Button
+    <ImageView
         android:id="@+id/button"
         android:layout_width="109dp"
         android:layout_height="98dp"
@@ -28,7 +28,7 @@
         android:inputType="textPersonName"
         android:textColorHint="#90fdfdfd" />
 
-    <Button
+    <ImageView
         android:id="@+id/button2"
         android:layout_width="108dp"
         android:layout_height="99dp"
@@ -37,7 +37,7 @@
         android:layout_marginStart="39dp"
         android:background="@drawable/downarrow" />
 
-    <Button
+    <ImageView
         android:id="@+id/button4"
         android:layout_width="101dp"
         android:layout_height="93dp"
@@ -47,7 +47,7 @@
         android:layout_marginEnd="187dp"
         android:background="@drawable/leftarrow" />
 
-    <Button
+    <ImageView
         android:id="@+id/button5"
         android:layout_width="98dp"
         android:layout_height="90dp"
@@ -56,7 +56,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/rightarrow" />
 
-    <Button
+    <ImageView
         android:id="@+id/button6"
         android:layout_width="135dp"
         android:layout_height="51dp"
@@ -65,7 +65,7 @@
         android:layout_marginEnd="69dp"
         android:background="@drawable/attack" />
 
-    <Button
+    <ImageView
         android:id="@+id/set"
         android:layout_width="129dp"
         android:layout_height="46dp"
@@ -74,7 +74,7 @@
         android:layout_marginEnd="28dp"
         android:background="@drawable/submit" />
 
-    <Button
+    <ImageView
         android:id="@+id/profile"
         android:layout_width="93dp"
         android:layout_height="40dp"
