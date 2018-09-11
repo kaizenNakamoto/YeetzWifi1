@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ipAddress = (EditText) findViewById(R.id.texty);
-        final ImageView up = findViewById(R.id.button);
-        final ImageView down = findViewById(R.id.button2);
-        final ImageView b3 = findViewById(R.id.set);
-        final ImageView left = findViewById(R.id.button4);
-        final ImageView right= findViewById(R.id.button5);
-        final ImageView on = findViewById(R.id.button6);
+        final  Button up = findViewById(R.id.button);
+        final Button down = findViewById(R.id.button2);
+        final Button b3 = findViewById(R.id.set);
+        final Button left = findViewById(R.id.button4);
+        final Button right= findViewById(R.id.button5);
+        final Button on = findViewById(R.id.button6);
         t1=findViewById(R.id.textView);
-        final ImageView profile=findViewById(R.id.profile);
+        final Button profile=findViewById(R.id.profile);
         b3.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
